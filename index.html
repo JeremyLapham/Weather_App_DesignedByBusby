@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Busby Weather App Made By Jeremy</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid" style="margin-bottom:2rem;">
+        <div class="row">
+            <div class="col-8">
+                <h1 class="text-center headerTxtBG">Harrison Busby's Weather App</h1>
+                <div id="articleImg" class="dropdown hide">
+                    <button title="Favorites" id="articleImg" class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li><a id="injectHere" class="dropdown-item"></a></li>
+                        <li><a id="" class="dropdown-item"></a></li>
+                        <li><a id="" class="dropdown-item"></a></li>
+                    </ul>
+                </div>
+                <div id="favHide" class="favButton hide">
+                    <button id="favoriteButton" type="button" class="btn btn favButtonStar" id="addBtn"></button>
+                </div>
+            </div>
+            <div class="col-4">
+                <button id="searchBtn" class="searchBtn starImg">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="replaceWithSearch">
+        <div class="row">
+            <div class="col-8">
+                <div class="text-center currentDayTxtBG">
+                    <h1 id="currentDay"></h1>
+                </div>
+            </div>
+            <div id="currentInfoHide" class="col-4 ">
+                <div class="currentInfo">
+                    <h4 id="cityDisplay"></h4>
+                    <h4 id="todayHigh"></h4>
+                    <h4 id="todayLow"></h4>
+                </div>
+            </div>
+            <div id="homeBtn2" class="col-4 hide">
+                <button class="currentInfo">
+                    <h1>Home</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="searchBar" class="col-8 hide">
+                <input type="text" class="inputBox" placeholder="Search By City Name or Zip Code" aria-label="CityName"
+                    aria-describedby="basic-addon1" id="city">
+            </div>
+            <div class="col-4">
+                <button id="homeBtn" class="currentInfo hide">
+                    <h1>Home</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- display screen -->
+    <div class="container-fluid" id="fiveDayBtns">
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <button id="day1BtnInfo" class="daysBG">
+                        <h2 id="showDay"></h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="daysWeatherBG">
+                    <div class="sunPicture"></div>
+                    <div id="day1HL">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <button id="day2BtnInfo" class="daysBG">
+                        <h2 id="showDay2"></h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="daysWeatherBG">
+                    <div class="sunPicture"></div>
+                    <div id="day2HL">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <button id="day3BtnInfo" class="daysBG">
+                        <h2 id="showDay3"></h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="daysWeatherBG">
+                    <div class="sunPicture"></div>
+                    <div id="day3HL">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <button id="day4BtnInfo" class="daysBG">
+                        <h2 id="showDay4"></h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="daysWeatherBG">
+                    <div class="sunPicture"></div>
+                    <div id="day4HL">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <button id="day5BtnInfo" class="daysBG">
+                        <h2 id="showDay5"></h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="daysWeatherBG">
+                    <div class="sunPicture"></div>
+                    <div id="day5HL">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="searchedInfo" class="container-fluid hide searchedMargining">
+        <div class="row">
+            <div class="col">
+                <div class="searchPageBG">
+                    <div class="col">
+                        <div class="sunPicture2">
+                        </div>
+                        <div class="searchedFormatting">
+                            <h4 class="fontSizeSearched" id="cityDisplay2">City,State</h4>
+                            <h4 class="fontSizeSearched" id="todayHigh2">High °F</h4>
+                            <h4 class="fontSizeSearched" id="todayLow2">Low °F</h4>
+                            <h4 class="fontSizeSearched" id="currentDay2">Weather Now</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fiveDaySearchy" class="container-fluid text-center space hide" style="color:white">
+        <div class="row">
+            <div class="col">
+                <div class="fiveForecastBG">
+                    <h3 id="searchedDayOne">Day 1</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fiveForecastBG">
+                    <h3 id="searchedDayTwo">Day 2</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fiveForecastBG">
+                    <h3 id="searchedDayThree">Day 3</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fiveForecastBG">
+                    <h3 id="searchedDayFour">Day 4</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fiveForecastBG">
+                    <h3 id="searchedDayFive">Day 5</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timeWeather" class="container-fluid hide">
+        <div class="row weatherForSpecificTime">
+            <div class="col-3 specificWeatherTxt">
+                <h1 class="">Early Morning</h1>
+            </div>
+            <div style="margin-left:2rem;" class="col-6 specificWeatherTxt2">
+                <h2 id="earlyMorningWeather">Early morning here</h2>
+            </div>
+        </div>
+        <div class="row weatherForSpecificTime">
+            <div class="col-3 specificWeatherTxt">
+                <h1 class="">Morning</h1>
+            </div>
+            <div style="margin-left:2rem;" class="col-6 specificWeatherTxt2">
+                <h2 id="morningWeather">morning here</h2>
+            </div>
+        </div>
+        <div class="row weatherForSpecificTime">
+            <div class="col-3 specificWeatherTxt">
+                <h1 class="">Afternoon</h1>
+            </div>
+            <div style="margin-left:2rem;" class="col-6 specificWeatherTxt2">
+                <h2 id="afternoonWeather">Afternoon here</h2>
+            </div>
+        </div>
+        <div class="row weatherForSpecificTime">
+            <div class="col-3 specificWeatherTxt">
+                <h1 class="">Evening</h1>
+            </div>
+            <div style="margin-left:2rem;" class="col-6 specificWeatherTxt2">
+                <h2 id="eveningWeather">Evening here</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/apps.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
